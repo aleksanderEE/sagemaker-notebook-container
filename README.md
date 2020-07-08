@@ -184,12 +184,12 @@ To save all work created in the container, mount a directory to act as the `Sage
 Following sample scripts have been provided to show an example of running a container using `qtangs/sagemaker-notebook:python3` image:
 1. `run-python3-container.sh`:
 ```bash
-docker run -t --name=sagemaker-notebook-container && \
-           -p 8888:8888 && \
-           -e AWS_PROFILE=default-api && \
-           -v ~/.aws:/home/ec2-user/.aws:ro && \
-           -v ~/.ssh:/home/ec2-user/.ssh:ro && \
-           -v /Users/foobar/projects/SageMaker:/home/ec2-user/SageMaker && \
+docker run -t --name=sagemaker-notebook-container  \
+           -p 8888:8888  \
+           -e AWS_PROFILE=default-api  \
+           -v ~/.aws:/home/ec2-user/.aws:ro  \
+           -v ~/.ssh:/home/ec2-user/.ssh:ro  \
+           -v /Users/foobar/projects/SageMaker:/home/ec2-user/SageMaker  \
            qtangs/sagemaker-notebook:python3
 ```
 2. `docker-compose.yml`:
